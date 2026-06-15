@@ -1,6 +1,6 @@
 # Addon Manifest
 
-Each addon entry describes one installable addon release.
+Each addon manifest describes one installable addon release. The short entries in `index.json` point to these manifest files through `manifestUrl`.
 
 Example:
 
@@ -15,9 +15,9 @@ Example:
   "sourceUrl": "https://github.com/Red-Blink/dune-docker-leadership",
   "downloadUrl": "https://github.com/Red-Blink/dune-docker-leadership/releases/download/v1.0.0/leadership-board.zip",
   "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
-  "permissions": [
-    "players:read"
-  ]
+  "permissions": {
+    "players": ["read"]
+  }
 }
 ```
 
@@ -32,7 +32,7 @@ Example:
 - `sourceUrl`: Public source repository.
 - `downloadUrl`: Pinned release archive URL. Do not use floating `latest` URLs.
 - `sha256`: Required SHA-256 checksum of the archive.
-- `permissions`: Requested console permissions.
+- `permissions`: Requested console permissions. Use structured permissions such as `{ "players": ["read"] }`. The console also accepts legacy string arrays like `["players:read"]`, but structured permissions are preferred for new addons.
 
 ## SHA-256
 

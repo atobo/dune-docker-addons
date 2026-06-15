@@ -2,10 +2,16 @@
 
 Community addon index for Dune Docker Console.
 
-This repository lists addon manifests that can be reviewed through pull requests and discovered by server owners from the Addons page in Dune Docker Console.
+This repository is the reviewed addon list used by Dune Docker Console. It does not host addon source code. Addon source code should live in each developer's own addon repository, while this repo points to reviewed release manifests and packages.
 
 ## Addon Authors
 
-Addons should be published from their own repository as release archives. To list an addon here, add a manifest under `addons/` and include it in `index.json`.
+Start from the addon template repo:
+
+```text
+https://github.com/Red-Blink/dune-docker-addon-template
+```
+
+Build and release your addon from your own repository. To list it here, add a manifest under `addons/` and include it in `index.json`.
 
 See `docs/addon-submission.md` and `docs/addon-manifest.md` for the expected format.

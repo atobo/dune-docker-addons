@@ -1,14 +1,15 @@
 # Addon Submission
 
-Addon submissions are reviewed through pull requests.
+Addon submissions are reviewed through pull requests. This repository is only the community addon list; addon code and release packages stay in each addon developer's own repository.
 
 ## Requirements
 
+- Create your addon from `https://github.com/Red-Blink/dune-docker-addon-template`.
 - Publish your addon from its own public repository.
 - Build an addon install archive containing `addon.json` and the addon files needed at runtime.
 - Upload that archive as a GitHub Release asset.
-- Add a manifest file under `addons/`.
-- Add the manifest to `index.json`.
+- Add a manifest file under `addons/`. This full manifest contains `sourceUrl`, `downloadUrl`, `sha256`, and `permissions`.
+- Add the manifest to `index.json` by adding a short entry with `id`, `name`, `description`, `author`, `version`, and `manifestUrl`.
 - Include a SHA-256 checksum for the release archive. Addons without a valid checksum are not considered installable.
 
 ## Manual Release Package Flow
