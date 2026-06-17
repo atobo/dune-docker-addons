@@ -9,7 +9,7 @@ Addon submissions are reviewed through pull requests. This repository is only th
 - Build an addon install archive containing `addon.json` and the addon files needed at runtime.
 - Upload that archive as a GitHub Release asset.
 - Add a manifest file under `addons/`. This full manifest contains `sourceUrl`, `downloadUrl`, `sha256`, and `permissions`.
-- Add the manifest to `index.json` by adding a short entry with `id`, `name`, `description`, `author`, `version`, and `manifestUrl`.
+- Add the manifest to `index.json` by adding a short entry with `id`, `name`, `description`, `author`, `version`, lifecycle fields, and `manifestUrl`.
 - Include a SHA-256 checksum for the release archive. Addons without a valid checksum are not considered installable.
 
 ## Manual Release Package Flow
@@ -48,6 +48,30 @@ For a new addon version, update the existing file in `addons/`:
 For example, `addons/leadership-board.json` remains the same file when moving from `1.0.0` to `1.0.1`; only the versioned values change.
 
 Only create a new JSON file when submitting a completely new addon.
+
+## Lifecycle States
+
+The community index controls addon lifecycle state. Addon packages should not put lifecycle fields in `addon.json`.
+
+Use these states in `index.json`:
+
+- `active`: supported and available for install.
+- `deprecated`: still installable, but may stop receiving updates.
+- `unsupported`: no longer supported; hidden from normal recommendation and blocked from new installs.
+- `removed`: removed from the community catalog and blocked from new installs.
+- `blocked`: blocked for safety; already-installed copies are disabled by the console and cannot be opened or enabled.
+
+Each entry should include:
+
+```json
+"lifecycle": "active",
+"lifecycleMessage": "",
+"lifecycleUrl": ""
+```
+
+Use `lifecycleMessage` for a short user-facing reason, and `lifecycleUrl` for more details when needed.
+
+If an addon is abandoned, mark it `unsupported` or `removed` instead of deleting the entry immediately. If an addon is unsafe, mark it `blocked`.
 
 ## Release Pinning
 

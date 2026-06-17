@@ -8,6 +8,9 @@
       "description": "Demo addon showing a ranked player overview with level, faction, guild, status, and last-seen details.",
       "author": "Red-Blink",
       "version": "1.0.0",
+      "lifecycle": "active",
+      "lifecycleMessage": "",
+      "lifecycleUrl": "",
       "manifestUrl": "https://raw.githubusercontent.com/Red-Blink/dune-docker-addons/main/addons/leadership-board-demo.json"
     }
   ]

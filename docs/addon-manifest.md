@@ -45,3 +45,33 @@ sha256sum leadership-board.zip
 ```
 
 The console should refuse to install community addons when `sha256` is missing, malformed, or does not match the downloaded archive.
+
+## Catalog Lifecycle Metadata
+
+Lifecycle fields belong in `index.json`, not in the install manifest under `addons/`.
+
+Example `index.json` entry:
+
+```json
+{
+  "id": "leadership-board",
+  "name": "Leadership Board",
+  "description": "Shows a ranked overview of players with level, faction, guild, status, and last seen details.",
+  "author": "Red-Blink",
+  "version": "1.0.0",
+  "lifecycle": "active",
+  "lifecycleMessage": "",
+  "lifecycleUrl": "",
+  "manifestUrl": "https://raw.githubusercontent.com/Red-Blink/dune-docker-addons/main/addons/leadership-board.json"
+}
+```
+
+Supported lifecycle states:
+
+- `active`: supported and installable.
+- `deprecated`: installable, but maintenance may end.
+- `unsupported`: blocked from new installs because it is no longer supported.
+- `removed`: blocked from new installs because it was removed from the catalog.
+- `blocked`: disabled by the console for safety.
+
+This lets the console warn users about abandoned addons and block unsafe addons without changing the addon's released package.
