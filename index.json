@@ -14,28 +14,6 @@
       "manifestUrl": "https://raw.githubusercontent.com/Red-Blink/dune-docker-addons/main/addons/leadership-board-demo.json"
     },
     {
-      "id": "eda-exchange-bot",
-      "name": "EDA Exchange Bot",
-      "description": "Easy Dune Admin exchange seeder controls for RedBlink Dune Docker Console.",
-      "author": "n00bGames",
-      "version": "0.8.7-beta",
-      "lifecycle": "active",
-      "lifecycleMessage": "",
-      "lifecycleUrl": "",
-      "manifestUrl": "https://raw.githubusercontent.com/Red-Blink/dune-docker-addons/main/addons/eda-exchange-bot.json"
-    },
-    {
-      "id": "dune-ops-observability",
-      "name": "Dune Ops Observability",
-      "description": "Read-only operations addon providing NOC dashboard, player activity, spice field tracking, and OPS health monitoring through the Console bridge.",
-      "author": "DarkDante",
-      "version": "0.4.1",
-      "lifecycle": "active",
-      "lifecycleMessage": "",
-      "lifecycleUrl": "",
-      "manifestUrl": "https://raw.githubusercontent.com/Red-Blink/dune-docker-addons/main/addons/dune-ops-observability.json"
-    },
-    {
       "id": "dune-airdrop-addon",
       "name": "Airdrop Manager",
       "description": "Standalone manager for playtime, daily streak, and weekly attendance-based G0 instant airdrops.",
